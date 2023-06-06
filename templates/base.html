@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+ 
+{% include 'partials/_head.html' %}
+
+<body>
+     <!-- Preloader -->
+     <div id="preloader">
+        <i class="circle-preloader"></i>
+        <img src="img/core-img/pizza.png" alt="">
+    </div>
+
+    <!-- Search Wrapper -->
+    {% include 'partials/_busca.html' %}
+    
+
+    <!-- ##### Header Area Start ##### -->
+    <header class="header-area">
+
+        <!-- Top Header Area -->
+        {% include 'partials/_top.html' %}
+
+        <!-- Navbar Area -->
+        {% include 'partials/_menu.html' %}
+        
+    </header>
+    <!-- ##### Header Area End ##### -->
+    
+
+    {% block conteudo%}    {% endblock %}
+
+    <!-- ##### Best Receipe Area End ##### -->
+
+    <!-- ##### Footer Area Start ##### -->
+    {% include 'partials/_footer.html' %}
+    <!-- ##### Footer Area Start ##### -->
+
+    <!-- ##### All Javascript Files ##### -->
+    <!-- jQuery-2.2.4 js -->
+    <script src="{% static 'js/jquery/jquery-2.2.4.min.js' %}"></script>
+    <!-- Popper js -->
+    <script src="{% static 'js/bootstrap/popper.min.js' %}"></script>
+    <!-- Bootstrap js -->
+    <script src="{% static 'js/bootstrap/bootstrap.min.js' %}"></script>
+    <!-- All Plugins js -->
+    <script src="{% static 'js/plugins/plugins.js' %}"></script>
+    <!-- Active js -->
+    <script src="{% static 'js/active.js' %}"></script>
+</body>
+
+</html>
