@@ -1,8 +1,10 @@
 from django.db import models
 from datetime import datetime
+from pessoas.models import Pessoa
 
 # Create your models here.
 class Prato(models.Model):
+    pessoa = models.ForeignKey(Pessoa, on_delete=models.CASCADE)
     nome_prato = models.CharField(
         max_length=100,
         verbose_name='Nome do Prato'
@@ -14,6 +16,8 @@ class Prato(models.Model):
     categoria = models.CharField(max_length=100, verbose_name='Categoria')
     date_prato = models.DateTimeField(default=datetime.now, blank=True, 
                                       verbose_name='Data')
+    foto_prato = models.ImageField(upload_to='pratos/%Y/%m/%d', blank=True)
+    publicado = models.BooleanField(default=False)
     
     ## fazer depois como explicação para o Django-Admin
     def __str__(self):
@@ -22,3 +26,4 @@ class Prato(models.Model):
     class Meta:
         verbose_name = 'Prato'
         verbose_name_plural = 'Pratos'
+
