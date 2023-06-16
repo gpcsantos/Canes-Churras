@@ -2,20 +2,28 @@
 
 from django.db import migrations, models
 import django.db.models.deletion
+from django.conf import settings
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('pessoas', '0002_alter_pessoa_nome'),
+        # ('pessoas', '0002_alter_pessoa_nome'),
         ('churras', '0001_initial'),
     ]
 
     operations = [
-        migrations.AddField(
+        # migrations.AddField(
+        #     model_name='prato',
+        #     name='pessoa',
+        #     # field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to='pessoas.pessoa'),
+        #     # preserve_default=False,
+        # ),
+
+        # Esse código veio do arquivo 0005 (recortado e colado)
+        migrations.AlterField(
             model_name='prato',
             name='pessoa',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, to='pessoas.pessoa'),
-            preserve_default=False,
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
         ),
     ]

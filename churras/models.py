@@ -1,10 +1,22 @@
 from django.db import models
 from datetime import datetime
-from pessoas.models import Pessoa
+from django.contrib.auth.models import User
+
+# from pessoas.models import Pessoa
 
 # Create your models here.
 class Prato(models.Model):
-    pessoa = models.ForeignKey(Pessoa, on_delete=models.CASCADE)
+    #não mostrar na primeira implementação
+    # escolher uma hora propícia para falar de choices
+    # primeira posição será armazenada no Banco, segunda posição será mostrada na combo
+    CATEGORIA_CHOICES = (
+        ('Entradas', 'Entradas'),
+        ('Churrasco', 'Churrasco'),
+        ('Sobremesa', 'Sobremesa'),
+    )
+
+    # pessoa = models.ForeignKey(Pessoa, on_delete=models.CASCADE)
+    pessoa = models.ForeignKey(User, on_delete=models.CASCADE)
     nome_prato = models.CharField(
         max_length=100,
         verbose_name='Nome do Prato'
@@ -13,7 +25,10 @@ class Prato(models.Model):
     modo_preparo = models.TextField(verbose_name='Modo de Preparo')
     tempo_preparo = models.IntegerField(verbose_name='Tempo de Preparo')
     rendimento = models.CharField(max_length=100, verbose_name="Rendimento")
-    categoria = models.CharField(max_length=100, verbose_name='Categoria')
+    categoria = models.CharField(max_length=100,
+                                  verbose_name='Categoria',
+                                  choices=CATEGORIA_CHOICES,
+                                )
     date_prato = models.DateTimeField(default=datetime.now, blank=True, 
                                       verbose_name='Data')
     foto_prato = models.ImageField(upload_to='pratos/%Y/%m/%d', blank=True)

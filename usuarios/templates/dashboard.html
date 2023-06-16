@@ -3,8 +3,19 @@
 
 {% block conteudo%}
 
-    <!-- ##### Best Receipe Area Start ##### -->
-
+     <!-- #### Contact Form Area Start #### -->
+    <div class="contact-area section-padding-0-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading">
+                        <h2>{{ user.username }}</h2>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
     <section class="best-receipe-area">
         <div class="container">
             <div class="row">
@@ -23,6 +34,12 @@
                                     <h5>{{ prato.nome_prato }}</h5>
                                     <h6>{{ prato.categoria }}</h6>
                                 </a>
+                                <a href="{% url 'deleta_prato' prato.id %}" type="button" class="btn btn-danger">
+                                    Apagar
+                                </a>
+                                <a href="{% url 'edita_prato' prato.id %}" type="button" class="btn btn-info">
+                                    Editar
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -31,5 +48,6 @@
             </div>
         </div>
     </section>
-    {% include 'partials/_paginator.html' %}
+    
+
 {% endblock %}

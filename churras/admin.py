@@ -6,6 +6,7 @@ class ListandoProdutos(admin.ModelAdmin):
     list_display = (
         'id',
         'nome_prato',
+        'pessoa',
         'categoria',
         'tempo_preparo',
         'rendimento',
@@ -17,7 +18,7 @@ class ListandoProdutos(admin.ModelAdmin):
     )
     search_fields = ('nome_prato',)
     list_filter = ('categoria','pessoa',)
-    list_per_page = 3
-    list_editable = ('publicado',)
+    list_per_page = 10
+    list_editable = ('publicado','pessoa','categoria',)
 
 admin.site.register(Prato, ListandoProdutos)

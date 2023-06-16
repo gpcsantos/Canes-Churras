@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block conteudo%}
+    
+     <!-- #### Contact Form Area Start #### -->
+    <div class="contact-area section-padding-0-80">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="section-heading">
+                        <h2>{{ user.username }}</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <p>Todos os campos são obrigatórios</p>
+                    <div class="contact-form-area">
+                        <form action="{% url 'cria_prato' %}" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-12 col-lg-12">
+                                    <label for="nome-prato"><b>Título do prato</b></label>
+                                    <input type="text" id="nome-prato" class="form-control" name="nome-prato" placeholder="Ex. Maninha no limão" required>
+                                </div>
+                                <div class="col-12">
+                                    <label for="ingredientes"><b>Ingredientes</b></label>
+                                    <textarea cols="30" rows="10" id="ingredientes" class="form-control" name="ingredientes" placeholder="Ex: Maninha, &#10; -3 limões, &#10; -sal e temperos" required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <label for="modo-preparo"><b>Modo de preparo</b></label>
+                                    <textarea cols="30" rows="10" id="modo-preparo" class="form-control" name="modo-preparo" placeholder="Ex: Corte saboroso, temperado com lima, sal e diversos tempoeros, marinado para obter o máximo de suculência" required></textarea>
+                                </div>
+                                <div class="col-12 col-lg-3">
+                                    <label for="tempo-preparo"><b>Tempo de preparo</b></label>
+                                    <input type="number" id="tempo-preparo" class="form-control" name="tempo-preparo" placeholder="Ex: 2" required>
+                                </div>
+                                <div class="col-12 col-lg-3">
+                                    <label for="rendimento"><b>Rendimento</b></label>
+                                    <input type="text" id="rendimento" class="form-control" name="rendimento" placeholder="Ex: Serve 1 pessoa" required>
+                                </div>
+                                <div class="col-12 col-lg-3">
+                                    <label for="categoria"><b>Categoria do prato</b></label>
+                                    <input type="text" id="categoria" class="form-control" name="categoria" placeholder="Ex: Churrasco" required>
+                                </div>
+                                <div class="col-12 col-lg-3">
+                                    <label for="foto-prato"><b>Foto</b></label>
+                                    <input type="file" id="foto-prato" class="form-control" name="foto-prato" required>
+                                </div>
+                                <div class="col-12">
+                                    <button class="btn delicious-btn mt-30" type="submit">Criar novo Prato</button>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    
+
+{% endblock %}

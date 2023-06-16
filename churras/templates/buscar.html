@@ -26,10 +26,13 @@
                             </div>
                         </div>
                     </div>
+                {% empty %}
+                    <div class="col-12 col-sm6 col-lg4">
+                        <p>Prato não encontrado</p>
+                    </div>
                 {% endfor %}
                
             </div>
         </div>
     </section>
-    {% include 'partials/_paginator.html' %}
 {% endblock %}
