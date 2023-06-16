@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-from .models import Prato
+from .models import Prato, Categoria
 
 # Create your views here.
 
@@ -22,9 +22,11 @@ def churrasco(request, prato_id):
     ## Se der tempo no final do curso
     ## trazer a idéia do SLUG, o slugfy e o metodo save no Model 
     prato = get_object_or_404(Prato, pk=prato_id)
+    categoria = Categoria.objects.all().order_by('nome_categoria')
 
     contexto ={
         'prato': prato,
+        'categorias': categoria,
     }
 
     return render(request, 'churrasco.html', contexto)
@@ -40,6 +42,10 @@ def buscar(request):
         if nome_a_buscar:
             pratos = pratos.filter(nome_prato__icontains=nome_a_buscar)
     
+    if 'categoria' in request_formulario:
+        categoria_a_buscar = request_formulario['categoria']
+        pratos = pratos.filter(categoria=categoria_a_buscar)
+
     contexto = {
         'lista_pratos' : pratos,
     }

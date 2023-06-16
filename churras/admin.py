@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Prato
+from .models import Prato, Categoria
 
 # Register your models here.
 class ListandoProdutos(admin.ModelAdmin):
@@ -22,3 +22,5 @@ class ListandoProdutos(admin.ModelAdmin):
     list_editable = ('publicado','pessoa','categoria',)
 
 admin.site.register(Prato, ListandoProdutos)
+admin.site.register(Categoria)
+

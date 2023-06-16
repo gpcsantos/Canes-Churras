@@ -6,13 +6,13 @@
         <!-- Receipe Post Search -->
         <div class="receipe-post-search mb-80">
             <div class="container">
-                <form action="#" method="post">
+                <form action="{% url 'buscar' %}" >
                     <div class="row">
                         <div class="col-12 col-lg-5">
-                            <select name="select1" id="select1">
-                                <option value="1">Entradas</option>
-                                <option value="1">Churrasco</option>
-                                <option value="1">Sobremesa</option>
+                            <select name="categoria" id="categoria">
+                                {% for categoria in categorias %}
+                                <option value="{{ categoria.id }}">{{ categoria.nome_categoria }}</option>
+                                {% endfor %}
                             </select>
                         </div>
                         <div class="col-12 col-lg-2 text-right">
