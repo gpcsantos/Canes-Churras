@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'churras',
     # 'pessoas',
     'usuarios',
-    'jazzmin',
+    # 'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -87,11 +87,11 @@ WSGI_APPLICATION = 'canesgrill.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'db_churras',
+        'NAME': 'railway',
         'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
-        'PORT': '3306',
+        'PASSWORD': 'ggl9MpCfN6365jB4yUnC',
+        'HOST': 'containers-us-west-82.railway.app',   # Or an IP Address that your DB is hosted on
+        'PORT': '7782',
         'OPTIONS': {
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
         }
