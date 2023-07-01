@@ -1,1 +1,1 @@
-web: gunicorn rail.wsgi --log-file -
+web: gunicorn canesgrill.wsgi --log-file -
