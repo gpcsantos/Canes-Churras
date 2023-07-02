@@ -26,7 +26,8 @@ SECRET_KEY = 'django-insecure-)zp!6zyz5(m_#ofl7e%a2_!uc#pua0h3ezf01u9s(ymat)6-c2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*','canes-churras-model-python.up.railway.app']
+ALLOWED_HOSTS = ['*','https://canes-churras-model-python.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://canes-churras-model-python.up.railway.app']
 
 
 # Application definition
