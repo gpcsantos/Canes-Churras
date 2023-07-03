@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'churras',
     # 'pessoas',
     'usuarios',
-    # 'jazzmin',
+    'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
