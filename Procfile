@@ -1,1 +1,1 @@
-web: gunicorn canesgrill.wsgi
+web: gunicorn canesgrill.wsgi:application
