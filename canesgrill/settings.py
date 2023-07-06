@@ -117,11 +117,11 @@ WSGI_APPLICATION = 'canesgrill.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'e6hFTP3M1JzaWku9GdWH',
-        'HOST': 'containers-us-west-44.railway.app',
-        'PORT': '6454',
+        'NAME': 'db_churras',
+        'USER': 'root',
+        'PASSWORD': 'nQ0AoIsUWIAII8TId6oiLLjiTdIPpk8p',
+        'HOST': 'dpg-cijjqtdph6euh7k3ovfg-a.oregon-postgres.render.com',
+        'PORT': '5432',
     }
 }
 
@@ -170,9 +170,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #      BASE_DIR / 'templates/static/', 
 #     ]
 STATIC_URL = 'static/'
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, "templates/static")]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "templates/static")]
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
-STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"
+#STATICFILES_STORAGE="whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 ## Media
 MEDIA_URL = 'media/'

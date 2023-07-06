@@ -1,1 +1,1 @@
-web: gunicorn canesgrill.wsgi --log-file -
+web: gunicorn canesgrill.wsgi
