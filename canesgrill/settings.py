@@ -36,7 +36,6 @@ INSTALLED_APPS = [
     'churras',
     # 'pessoas',
     'usuarios',
-    #'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -117,10 +116,10 @@ WSGI_APPLICATION = 'canesgrill.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'db_churras',
-        'USER': 'root',
-        'PASSWORD': 'nQ0AoIsUWIAII8TId6oiLLjiTdIPpk8p',
-        'HOST': 'dpg-cijjqtdph6euh7k3ovfg-a.oregon-postgres.render.com',
+        'NAME': 'db_churras_vn8r',
+        'USER': 'admin',
+        'PASSWORD': 'vvoi6Z1TdpDHF4k5lvftR9oVsTxVSNR8',
+        'HOST': 'dpg-ciot236nqql4qa0fc20g-a.oregon-postgres.render.com',
         'PORT': '5432',
     }
 }
